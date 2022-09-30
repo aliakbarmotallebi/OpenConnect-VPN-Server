@@ -6,7 +6,7 @@ Tested on ubuntu 18.04 and 16.04.
 
 Download and saving script on your server:
 ```bash
-wget https://github.com/aliakbarmotallebi/OpenConnect-VPN-Server.git
+git clone https://github.com/aliakbarmotallebi/OpenConnect-VPN-Server.git
 ```
 
 Making script executable
