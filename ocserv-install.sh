@@ -40,20 +40,20 @@ certtool --generate-certificate --load-privkey server-key.pem --load-ca-certific
 
 echo -e "\e[32mInstalling ocserv\e[39m"
 apt install ocserv
-cp /etc/ocserv/ocserv.conf ~/certificates/
+cp /etc/ocserv/config ~/certificates/
 
-sed -i -e 's@auth = "@#auth = "@g' /etc/ocserv/ocserv.conf
-sed -i -e 's@auth = "pam@auth = "#auth = "pam"@g' /etc/ocserv/ocserv.conf
-sed -i -e 's@try-mtu-discovery = @try-mtu-discovery = true@g' /etc/ocserv/ocserv.conf
-sed -i -e 's@dns = @#dns = @g' /etc/ocserv/ocserv.conf
-sed -i -e 's@# multiple servers.@dns = 8.8.8.8@g' /etc/ocserv/ocserv.conf
-sed -i -e 's@route =@#route =@g' /etc/ocserv/ocserv.conf
-sed -i -e 's@no-route =@#no-route =@g' /etc/ocserv/ocserv.conf
-sed -i -e 's@cisco-client-compat@cisco-client-compat = true@g' /etc/ocserv/ocserv.conf
-sed -i -e 's@##auth = "#auth = "pam""@auth = "plain[passwd=/etc/ocserv/ocpasswd]"@g' /etc/ocserv/ocserv.conf
+sed -i -e 's@auth = "@#auth = "@g' /etc/ocserv/config
+sed -i -e 's@auth = "pam@auth = "#auth = "pam"@g' /etc/ocserv/config
+sed -i -e 's@try-mtu-discovery = @try-mtu-discovery = true@g' /etc/ocserv/config
+sed -i -e 's@dns = @#dns = @g' /etc/ocserv/config
+sed -i -e 's@# multiple servers.@dns = 8.8.8.8@g' /etc/ocserv/config
+sed -i -e 's@route =@#route =@g' /etc/ocserv/config
+sed -i -e 's@no-route =@#no-route =@g' /etc/ocserv/config
+sed -i -e 's@cisco-client-compat@cisco-client-compat = true@g' /etc/ocserv/config
+sed -i -e 's@##auth = "#auth = "pam""@auth = "plain[passwd=/etc/ocserv/ocpasswd]"@g' /etc/ocserv/config
 
-sed -i -e 's@server-cert = /etc/ssl/certs/ssl-cert-snakeoil.pem@server-cert = /etc/ocserv/server-cert.pem@g' /etc/ocserv/ocserv.conf
-sed -i -e 's@server-key = /etc/ssl/private/ssl-cert-snakeoil.key@server-key = /etc/ocserv/server-key.pem@g' /etc/ocserv/ocserv.conf
+sed -i -e 's@server-cert = /etc/ssl/certs/ssl-cert-snakeoil.pem@server-cert = /etc/ocserv/server-cert.pem@g' /etc/ocserv/config
+sed -i -e 's@server-key = /etc/ssl/private/ssl-cert-snakeoil.key@server-key = /etc/ocserv/server-key.pem@g' /etc/ocserv/config
 
 echo "Enter a username:"
 read username
