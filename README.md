@@ -6,7 +6,7 @@ Tested on ubuntu 18.04 and 16.04.
 
 Download and saving script on your server:
 ```bash
-curl -O https://raw.githubusercontent.com/iw4p/OpenConnect-VPN-Server/master/ocserv-install.sh
+wget https://github.com/aliakbarmotallebi/OpenConnect-VPN-Server.git
 ```
 
 Making script executable
